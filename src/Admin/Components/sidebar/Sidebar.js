@@ -1,5 +1,5 @@
 import React from 'react'
-import '../sidebar/sidebar.scss'
+import './sidebar.scss'
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
@@ -52,15 +52,13 @@ const Sidebar = () => {
                 </li>
                 </Link>
 
+                <Link to = "/admin/order" style={{textDecoration:"none"}}>
                 <li>
                 <ShoppingCartIcon className="icon" />
                     <span>Orders</span>
                 </li>
-
-                <li>
-                <LocalShippingIcon className="icon" />
-                    <span>Delivery</span>
-                </li>
+                </Link>
+            
                 <p className="title">USEFUL</p>
                 <li>
                 <BarChartIcon className="icon" />
@@ -91,11 +89,13 @@ const Sidebar = () => {
                 <AccountCircleIcon className="icon"/>
                     <span>Profile</span>
                 </li>
-
+                
+                
                 <li>
                 <LogoutIcon className="icon"/>
                     <span>Logout</span>
                 </li>
+               
 
             </ul>
             </div>

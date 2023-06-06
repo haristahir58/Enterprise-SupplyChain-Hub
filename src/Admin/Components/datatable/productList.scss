@@ -1,0 +1,66 @@
+.tableContainer {
+  width: 100%;
+  max-width: 98%; /* Adjust the maximum width as per your requirement */
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+  width: 100%;
+  
+}
+
+.tableCell {
+  padding: 12px;
+}
+
+
+.deleteButton {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  color: crimson;
+  background-color: transparent;
+  border: 2px solid rgba(220, 20, 60, 0.6);
+  cursor: pointer;
+  box-sizing: border-box;
+  line-height: 1;
+  margin-right: 10px; /* Add margin-right between buttons */
+}
+
+.buttonLink {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 5px;
+  color: crimson;
+  background-color: transparent;
+  border: 2px solid rgba(220, 20, 60, 0.6);
+  cursor: pointer;
+  box-sizing: border-box;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.productTableTitle{
+  width: 95%;
+  font-size: 24px;
+  color: gray;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 32px;
+  margin-top: 12px;
+
+  .newLink{
+    text-decoration: none;
+    color: green;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid green;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 9px;
+  }
+}

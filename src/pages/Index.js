@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import Navbar from "./Navbar";
 import TopBar from "./TopBar";
 import Footer from "./Footer";
@@ -71,12 +72,12 @@ export default function Index() {
                   we can help you streamline your operations and achieve
                   success.
                 </p>
-                <a
-                  href="/about.html"
+                <Link
+                  to='/about'
                   className="btn btn-primary mt-3 py-2 px-4"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -326,12 +327,12 @@ export default function Index() {
                     </h6>
                   </li>
                 </ul>
-                <a
-                  href="/about.html"
+                <Link
+                 to='/service'
                   className="btn btn-primary mt-3 py-2 px-4"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
