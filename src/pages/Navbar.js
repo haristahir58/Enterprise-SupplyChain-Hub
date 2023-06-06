@@ -81,9 +81,9 @@ export default function Navbar() {
         <NavLink to={"/admin/login"} className="dropdown-item" activeClassName="active">
           As Admin
         </NavLink>
-        <a href="single.html" className="dropdown-item">
+        <NavLink to={"/soleDistributor/signin"} className="dropdown-item" activeClassName="active">
           As Sole Distributor
-        </a>
+        </NavLink>
         <a href="single.html" className="dropdown-item">
           As Distributor
         </a>
@@ -112,9 +112,9 @@ export default function Navbar() {
         className={`dropdown-menu rounded-0 m-0 ${isOpen2 ? "show" : ""}`}
         aria-labelledby="dropdownMenuButton"
       >
-        <a href="single.html" className="dropdown-item">
+        <NavLink to="/soleDistributor/register" className="dropdown-item" activeClassName="active">
           As Sole Distributor
-        </a>
+        </NavLink>
         <a href="single.html" className="dropdown-item">
           As Distributor
         </a>

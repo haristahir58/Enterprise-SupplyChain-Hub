@@ -1,4 +1,6 @@
 import React from "react";
+import {useState} from 'react'
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Navbar from "../pages/Navbar";
 import TopBar from "../pages/TopBar";
 import Footer from "../pages/Footer";
@@ -6,7 +8,39 @@ import loginpic from '../Images/Login.jpg';
 import '../App.css';
 
 
-export default function adminLogin() {
+export default function AdminLogin() {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const loginAdmin= async (e)=>{
+    e.preventDefault();
+    
+    const res = await fetch("/admin/login",{
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify({
+       email:email,  password:password
+      })
+      
+    });
+
+    const data = res.json();
+    if(res.status===400 || !data){
+      window.alert("Invalid Credentials")
+    }
+    else{
+      window.alert("Login Successfull")
+      navigate("/admin");
+    }
+
+  }
+
+
+
   return (
     <>
     
@@ -31,9 +65,9 @@ export default function adminLogin() {
             <h1 className="text-white display-3">Admin Login</h1>
             <div className="d-inline-flex align-items-center text-white">
               <p className="m-0">
-                <a className="text-white" href="">
+              <Link className="text-white" to="/">
                   Home
-                </a>
+                </Link>
               </p>
               <i className="fa fa-circle px-3"></i>
               <p className="m-0">Admin Login</p>
@@ -65,7 +99,7 @@ export default function adminLogin() {
                 </div>
                 <div className="signin-form">
                     <h2 className='form-title'>Login</h2>
-                    <form className='register-form' id='register-form'>
+                    <form method='POST' className='register-form' id='register-form'>
                         
 
                         <div className="form-group">
@@ -73,7 +107,9 @@ export default function adminLogin() {
                             <i class="zmdi zmdi-email material-icons-name"></i>
                             </label>
 
-                            <input type="email" name="email" id="email" autoComplete='off' placeholder='Your Email'/>   
+                            <input type="email" name="email" id="email" autoComplete='off' value={email} 
+                            onChange={(e)=>setEmail(e.target.value)}
+                            placeholder='Your Email'/>   
                         </div>
 
 
@@ -82,15 +118,18 @@ export default function adminLogin() {
                             <i class="zmdi zmdi-lock material-icons-name"></i>
                             </label>
 
-                            <input type="password" name="password" id="password" autoComplete='off' placeholder='Your Password'/>   
+                            <input type="password" name="password" id="password" autoComplete='off' 
+                            value={password}
+                            onChange={(e)=>setPassword(e.target.value)}
+                            placeholder='Your Password'/>   
                         </div>
 
 
 
                         <div className="form-group">
-                            <input type="submit" name='signin' id='signin' className='form-submit' value={"Login"} /> 
-                            <p className='login-link my-3'>Don't have an account? <a
-                            href='/login'>Sign Up</a></p>
+                            <input type="submit" name='signin' id='signin' 
+                            onClick={loginAdmin}
+                            className='form-submit' value={"Login"} /> 
                         </div>
 {/*                         
                         <div className="form-group">

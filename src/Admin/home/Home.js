@@ -1,11 +1,12 @@
 import React from 'react'
-import Sidebar from '../Components/sidebar/Sidebar'
+import Sidebar from '../../Admin/Components/sidebar/Sidebar'
+import '../../Admin/Components/sidebar/sidebar.scss'
 import Navbar from '../Components/navbar/Navbar'
 import "./home.scss"
 import Widget from "../Components/widget/Widget";
 import Chart from '../Components/chart/Chart';
 import Featured from '../Components/featured/Featured'
-import Table from '../Components/table/Table'
+// import Table from '../Components/table/Table'
 
 const Home = () => {
   return (
@@ -23,10 +24,10 @@ const Home = () => {
                 <Featured/>
                 <Chart title="Last 6 Months (Revenue)" aspect={2/1}/>
                 </div>
-                <div className="listContainer">
+                {/* <div className="listContainer">
                   <div className="listTitle">Latest Transactions</div>
                   <Table/>
-                </div>
+                </div> */}
         </div>
     </div>
   )

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import Navbar from "./Navbar";
 import TopBar from "./TopBar";
 import Footer from "./Footer";
@@ -25,9 +26,9 @@ export default function About() {
             <h1 className="text-white display-3">About</h1>
             <div className="d-inline-flex align-items-center text-white">
               <p className="m-0">
-                <a className="text-white" href="">
+              <Link className="text-white" to="/">
                   Home
-                </a>
+                </Link>
               </p>
               <i className="fa fa-circle px-3"></i>
               <p className="m-0">About</p>

@@ -1,5 +1,6 @@
 import React from 'react'
 import './list.scss'
+import '../Components/sidebar/sidebar.scss'
 import Navbar from '../Components/navbar/Navbar'
 import Sidebar from '../Components/sidebar/Sidebar'
 import Datatable from '../Components/datatable/Datatable'
